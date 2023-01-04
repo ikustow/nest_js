@@ -4,19 +4,17 @@ import { UsersModule } from './users/users.module';
 import { ConfigModule } from "@nestjs/config";
 import * as process from "process";
 import { User } from "./users/users.model";
-import { RolesService } from './roles/roles.service';
-import { RolesController } from './roles/roles.controller';
 import { RolesModule } from './roles/roles.module';
 import { Role } from "./roles/roles.model";
 import { UserRoles } from "./roles/user-roles.model";
 import { AuthController } from './auth/auth.controller';
-import { AuthResolver } from './auth/auth.resolver';
+
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthResolver, AuthService],
+  providers: [AuthService],
   imports: [
     RolesModule,
     UsersModule,
